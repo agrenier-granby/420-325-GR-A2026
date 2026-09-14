@@ -137,7 +137,7 @@ internal class Program
         {
             try
             {
-                int valeur = Convert.ToInt32(nombre);
+                int valeur = int.Parse(nombre);
 
                 Console.WriteLine("La conversion a réussi.");
             }
