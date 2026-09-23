@@ -1,4 +1,7 @@
 <Solution>
   <Project Path="Cours1\Cours1.csproj" />
   <Project Path="Cours2/Cours2.csproj" Id="c8f1bb17-8b2a-46a0-8df3-09e80b270375" />
+  <Project Path="Cours3/Cours3.csproj" />
+  <Project Path="Cours4/Cours4.csproj" />
+  <Project Path="Cours5/Cours5.csproj" />
 </Solution>
