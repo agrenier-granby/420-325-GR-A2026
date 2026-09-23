@@ -88,17 +88,6 @@ internal class Program
             Console.WriteLine($"{produit.Nom} - {produit.Prix}$");
         }
 
-        ITest marcher = new Marcher();
-        ITest rouler = new Rouler();
-        List<ITest> tests = new List<ITest>();
-        tests.Add(marcher);
-        tests.Add(rouler);
-        foreach (var test in tests)
-        {
-            MethodeAvecInterface(test);
-        }
-
-        #region Exercice 6 - Partie 2
         Console.WriteLine();
         Console.WriteLine("===== Exercice 6 - Partie 2 =====");
 
@@ -110,7 +99,6 @@ internal class Program
                 Console.WriteLine(livrable.Livrer());
             }
         }
-        #endregion
 
         Console.WriteLine();
         Console.WriteLine("===== Exercice 6 - Partie 3 =====");
@@ -131,11 +119,31 @@ internal class Program
         {
             Console.WriteLine($"{produit.Nom} - {produit.Prix}$");
         }
-    }
-    static void MethodeAvecInterface(ITest test)
-    {
-        test.Etape1();
-        int valeur2 = test.Etape2();
-        int valeur3 = test.Etape3();
+
+        Console.WriteLine();
+        Console.WriteLine("===== Exercice 6 supplémentaire =====");
+
+        Console.Write("Choisissez un transformateur (1, 2 ou 3) : ");
+        int choix = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Entrez un texte : ");
+        string texte = Console.ReadLine()!;
+
+        ITransformer transformateur;
+
+        if (choix == 1)
+        {
+            transformateur = new UpperCaseTransformer();
+        }
+        else if (choix == 2)
+        {
+            transformateur = new LeetTransformer();
+        }
+        else
+        {
+            transformateur = new LowerCaseTransformer();
+        }
+
+        Console.WriteLine(transformateur.Transformer(texte));
     }
 }
